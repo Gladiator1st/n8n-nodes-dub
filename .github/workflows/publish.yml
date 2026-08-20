@@ -1,0 +1,48 @@
+name: Publish n8n Community Node
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Required for npm provenance statement
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+
+      - name: Build TypeScript & Assets
+        run: npm run build
+
+      - name: Authenticate and Publish with Provenance (if new version)
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          NPM_VERSION=$(npm view @gladiator1st/n8n-nodes-dub version 2>/dev/null || echo "")
+          echo "Current package version: $CURRENT_VERSION"
+          echo "Latest version on npm:   $NPM_VERSION"
+
+          if [ "$CURRENT_VERSION" = "$NPM_VERSION" ]; then
+            echo "✅ Version $CURRENT_VERSION is already published on npm. Skipping publish."
+            exit 0
+          fi
+
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

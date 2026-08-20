@@ -1,0 +1,65 @@
+{
+  "name": "@gladiator1st/n8n-nodes-dub",
+  "version": "1.0.0",
+  "description": "n8n community node for Dub.co - Modern Short Links, Click Analytics, Custom QR Codes & AI Agent Tools",
+  "author": {
+    "name": "Muhammad Qasim",
+    "email": "qasimasif958@gmail.com",
+    "url": "https://github.com/Gladiator1st"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n-nodes-dub",
+    "n8n",
+    "dub",
+    "dub-co",
+    "short-link",
+    "link-shortener",
+    "qr-code",
+    "click-tracking",
+    "analytics",
+    "marketing",
+    "langchain"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Gladiator1st/n8n-nodes-dub#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gladiator1st/n8n-nodes-dub.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc && npx gulp build:icons",
+    "dev": "npx tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/DubApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Dub/Dub.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.67.0",
+    "@typescript-eslint/parser": "^8.67.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^5.0.0",
+    "n8n-workflow": "^1.78.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
