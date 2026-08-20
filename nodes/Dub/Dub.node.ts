@@ -329,32 +329,32 @@ export class Dub implements INodeType {
 				},
 				options: [
 					{
-						name: 'Count (Total)',
-						value: 'count',
-					},
-					{
-						name: 'Timeseries (Hourly/Daily)',
-						value: 'timeseries',
-					},
-					{
-						name: 'Countries',
-						value: 'countries',
+						name: 'Browsers',
+						value: 'browsers',
 					},
 					{
 						name: 'Cities',
 						value: 'cities',
 					},
 					{
+						name: 'Count (Total)',
+						value: 'count',
+					},
+					{
+						name: 'Countries',
+						value: 'countries',
+					},
+					{
 						name: 'Devices',
 						value: 'devices',
 					},
 					{
-						name: 'Browsers',
-						value: 'browsers',
-					},
-					{
 						name: 'Referrers',
 						value: 'referrers',
+					},
+					{
+						name: 'Timeseries (Hourly/Daily)',
+						value: 'timeseries',
 					},
 				],
 				default: 'count',
@@ -461,13 +461,13 @@ export class Dub implements INodeType {
 					},
 				},
 				options: [
+					{ name: 'Blue', value: 'blue' },
+					{ name: 'Brown', value: 'brown' },
+					{ name: 'Green', value: 'green' },
+					{ name: 'Pink', value: 'pink' },
+					{ name: 'Purple', value: 'purple' },
 					{ name: 'Red', value: 'red' },
 					{ name: 'Yellow', value: 'yellow' },
-					{ name: 'Green', value: 'green' },
-					{ name: 'Blue', value: 'blue' },
-					{ name: 'Purple', value: 'purple' },
-					{ name: 'Pink', value: 'pink' },
-					{ name: 'Brown', value: 'brown' },
 				],
 				default: 'blue',
 				description: 'Color theme of the tag',
