@@ -1,6 +1,6 @@
 {
   "name": "@gladiator1st/n8n-nodes-dub",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "n8n community node for Dub.co - Modern Short Links, Click Analytics, Custom QR Codes & AI Agent Tools",
   "author": {
     "name": "Muhammad Qasim",
