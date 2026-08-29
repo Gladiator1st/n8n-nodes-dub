@@ -27,7 +27,7 @@ export class DubApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				Authorization: '=Bearer {{$credentials.apiKey}}',
+				Authorization: '={{$credentials.apiKey.trim().startsWith("Bearer ") ? $credentials.apiKey.trim() : "Bearer " + $credentials.apiKey.trim().replace(/^[\"\']|[\"\']$/g, "")}}',
 			},
 		},
 	};
@@ -35,7 +35,7 @@ export class DubApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://api.dub.co',
-			url: '/workspaces',
+			url: '/domains',
 			method: 'GET',
 		},
 	};
