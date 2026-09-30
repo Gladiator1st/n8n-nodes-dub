@@ -29,8 +29,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc && npx gulp build:icons",
-    "dev": "npx tsc --watch",
+    "build": "node ./node_modules/typescript/lib/tsc.js && node ./node_modules/gulp/bin/gulp.js build:icons",
+    "dev": "node ./node_modules/typescript/lib/tsc.js --watch",
     "prepublishOnly": "npm run build"
   },
   "files": [
