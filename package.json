@@ -1,6 +1,6 @@
 {
   "name": "@gladiator1st/n8n-nodes-dub",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "n8n community node for Dub.co - Modern Short Links, Click Analytics, Custom QR Codes & AI Agent Tools",
   "author": {
     "name": "Muhammad Qasim",
@@ -29,8 +29,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "node ./node_modules/typescript/lib/tsc.js && node ./node_modules/gulp/bin/gulp.js build:icons",
-    "dev": "node ./node_modules/typescript/lib/tsc.js --watch",
+    "build": "npx tsc && npx gulp build:icons",
+    "dev": "npx tsc --watch",
     "prepublishOnly": "npm run build"
   },
   "files": [
