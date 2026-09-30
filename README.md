@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dt/@gladiator1st/n8n-nodes-dub?style=flat-square&color=blue)](https://www.npmjs.com/package/@gladiator1st/n8n-nodes-dub)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)
 
-Official n8n community node for **[Dub.co](https://dub.co)** — the modern, open-source link management platform. Create branded short links, generate customized high-resolution QR codes, track real-time click and conversion analytics, and connect directly with LangChain AI Agents using dynamic tools!
+Community node for **[Dub.co](https://dub.co)** — the modern, open-source link management platform. Create branded short links, generate customized high-resolution QR codes, track real-time click and conversion analytics, and connect directly with LangChain AI Agents using dynamic tools!
 
 ---
 
